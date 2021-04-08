@@ -1,0 +1,36 @@
+<%- include('partials/_header.ejs', {title:'EDIT CUSTOMER' }) %>
+
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="card bg-dark p-3">
+                    <div class="card-header">
+                        <h1 class="text-center text-white">
+                            Edit Customer
+                        </h1>
+                    </div>
+                    <div class="card-body">
+                        <form action="/edit/<%= data.id %>" method="POST" autocomplete="off">
+                            <div class="form-group pb-2">
+                                <input type="text" name="name" value="<%= data.name %>" class="form-control border-0">
+                            </div>
+                            <div class="form-group pb-2">
+                                <input type="text" name="address" value="<%= data.address %>"
+                                    class="form-control border-0">
+                            </div>
+                            <div class="form-group  pb-2">
+                                <input type="text" name="phone" value="<%= data.phone %>" class="form-control border-0">
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-secondary form-control">Edit customer</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <%- include('partials/_footer.ejs') %>

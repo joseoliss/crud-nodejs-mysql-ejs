@@ -1,0 +1,70 @@
+<%- include('partials/_header.ejs', {title:'CUSTOMER' }) %>
+
+    <div class="container pt-5">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="card bg-dark p-3">
+                    <div class="card-header">
+                        <h4 class="text-white text-center">
+                            CRUD Customers NODEJS - MYSQL
+                        </h4>
+                    </div>
+                    <div class="card-body">
+                        <form action="/add" method="POST" autocomplete="off">
+                            <div class="form-group pb-2">
+                                <input type="text" name="name" placeholder="Name" class="form-control border-0">
+                            </div>
+                            <div class="form-group pb-2">
+                                <input type="text" name="address" placeholder="Address" class="form-control border-0">
+                            </div>
+                            <div class="form-group  pb-2">
+                                <input type="text" name="phone" placeholder="Phone" class="form-control border-0">
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-secondary form-control">Save new customer</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <table class="table table-bordered table-dark table-hover">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Address</th>
+                            <th>Phone</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% if (data) { %>
+                            <% for( let i=0; i < data.length; i++ ) { %>
+                                <tr>
+                                    <td>
+                                        <%= data[i].id %>
+                                    </td>
+                                    <td>
+                                        <%= data[i].name %>
+                                    </td>
+                                    <td>
+                                        <%= data[i].address %>
+                                    </td>
+                                    <td>
+                                        <%= data[i].phone %>
+                                    </td>
+                                    <td>
+                                        <a href="/edit/<%= data[i].id %>" class="btn btn-secondary">Edit</a>
+                                        <a href="/delete/<%= data[i].id %>" class="btn btn-danger">Delete</a>
+                                    </td>
+                                </tr>
+                                <% } %>
+                                    <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <%- include('partials/_footer.ejs') %>
