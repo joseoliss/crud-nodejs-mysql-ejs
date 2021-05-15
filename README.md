@@ -1,10 +1,10 @@
 # crud-nodejs-mysql-ejs
 Example of how to do a CRUD with mySql
 
-First install dependencies: npm install
+npm install
 
-second, use the database script to create the database in mysql
+run mysql database script 
 
-third, change the database connection credentials with yours
+change database connection credentials with yours
 
-finally run the project: npm start
+npm start
